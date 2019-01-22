@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="./css/asidemenu.css"/>
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css"/>
+</head>
+<body>
+  <div class="g-container">
+  <aside class="g-aside">
+    <ul class="aside-memu">
+      <li class="aside-menu-list">
+        <router-link to="/Dashboard">
+          <i class="iconfont icon-fa-dashboard"></i>
+          <p>菜单标题</p>
+        </router-link>
+        <ul  class="hide-menu"></ul>
+      </li>
+      <li class="aside-menu-list" :key="index" v-for="(list,index) in menuList">
+        <a href="javascript:;">
+          <i :class="list.i"></i>
+          <p>{{list.menuName}}</p>
+          <span class="translate"></span>
+          <span class="menu-list-num">{{list.menuListNum}}</span>
+        </a>
+        <!--下拉菜单1-->
+        <ul class="hide-menu hide1">
+          <li :key="index" v-for="(lis,index) in list.hideMenu">
+            <router-link :to="lis.route">{{lis.hideTitle}}</router-link>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  <div class="section">
+    <router-view></router-view>
+    <div class="clearfix"></div>
+  </div>
+</div>
+</body>
+</html>
+<script src="./js/vue.min.js"></script>
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script>
+  // import $ from "jquery";
+  var app=new Vue({
+    el:".g-container",
+    data(){
+      return{
+        show:false,
+        "menuList":[
+          {
+            "i":"iconfont icon-book",
+            "menuName":"一级菜单",
+            "menuListNum":"2",
+            "hideMenu":[
+              {
+                "hideTitle":"二级菜单",
+                "route":"/EditableTable"
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":"/ShopBrand"
+              }
+            ]
+          },
+          {
+            "i":"iconfont icon-cogs",
+            "menuName":"一级菜单",
+            "menuListNum":"4",
+            "hideMenu":[
+              {
+                "hideTitle":"二级菜单",
+                "route":"/SaleManagement"
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":"/SaleActivityList"
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":"/SuperGift"
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":""
+              }
+            ]
+          },
+          {
+            "i":"iconfont icon-tasks",
+            "menuName":"一级菜单",
+            "menuListNum":"4",
+            "hideMenu":[
+              {
+                "hideTitle":"二级菜单",
+                "route":"/OrderList"
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":"/OrderInquiry"
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":""
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":""
+              }
+            ]
+          },
+          {
+            "i":"iconfont icon-th",
+            "menuName":"一级菜单",
+            "menuListNum":"3",
+            "hideMenu":[
+              {
+                "hideTitle":"二级菜单",
+                "route":"/viplist"
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":"/addvip"
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":"/Gallery"
+              }
+            ]
+          },
+          {
+            "i":"iconfont icon-fire",
+            "menuName":"一级菜单",
+            "menuListNum":"3",
+            "hideMenu":[
+              {
+                "hideTitle":"二级菜单",
+                "route":""
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":""
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":"/"
+              }
+            ]
+          },
+          {
+            "i":"iconfont icon-trophy",
+            "menuName":"一级菜单",
+            "menuListNum":"3",
+            "hideMenu":[
+              {
+                "hideTitle":"二级菜单",
+                "route":""
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":""
+              },
+              {
+                "hideTitle":"二级菜单",
+                "route":"/BasicTable"
+              }
+            ]
+          }
+        ],
+        "ulFirst":[
+          {
+            "taskTit":"后台管理",
+            "taskPercent":"44%"
+          },
+          {
+            "taskTit":"数据库更新",
+            "taskPercent":"65%"
+          },
+          {
+            "taskTit":"任务进度",
+            "taskPercent":"87%"
+          },
+          {
+            "taskTit":"效果实现",
+            "taskPercent":"33%"
+          },
+          {
+            "taskTit":"功能",
+            "taskPercent":"90%"
+          }
+        ],
+        "ulSecond":[
+          {
+            "img":"../static/image/boy.bmp",
+            "name":"Mr Mei",
+            "time":"Just now",
+            "greetting":"Hello,this is an example msg."
+          },
+          {
+            "img":"../static/image/gril.bmp",
+            "name":"Miss Li",
+            "time":"10 mins",
+            "greetting":"Hi,Jhon Doe Bhai how are you?"
+          },
+          {
+            "img":"../static/image/gril.bmp",
+            "name":"Miss Miao",
+            "time":"3 hrs",
+            "greetting":"This is awesome Dashboard."
+          },
+          {
+            "img":"../static/image/gril.bmp",
+            "name":"Miss Liang",
+            "time":"Just now",
+            "greetting":"Hello,this is metrilab"
+          },
+          {
+            "img":"../static/image/gril.bmp",
+            "name":"Miss Sun",
+            "time":"Just now",
+            "greetting":"Hello,this is sun"
+          }
+        ],
+        "ulThird":[
+          {
+            "iClassName":"iconfont icon-bolt",
+            "pCon":"服务器#3超载",
+            "time":"34 mins"
+          },
+          {
+            "iClassName":"iconfont icon-bell1",
+            "pCon":"服务器#10没响应",
+            "time":"1 Hours"
+          },
+          {
+            "iClassName":"iconfont icon-bolt",
+            "pCon":"数据库超载24%.",
+            "time":"4 hrs"
+          },
+          {
+            "iClassName":"iconfont icon-plus",
+            "pCon":"新用户注册",
+            "time":"Just now"
+          },
+          {
+            "iClassName":"iconfont icon-bullhorn",
+            "pCon":"应用程序出错",
+            "time":"10 mins"
+          }
+        ],
+        "HeaderRight":[
+          {
+            "iClassName":"iconfont icon-user",
+            "marks":"我的简介"
+          },
+          {
+            "iClassName":"iconfont icon-cog",
+            "marks":"我的设置"
+          },
+          {
+            "iClassName":"iconfont icon-key",
+            "marks":"注销"
+          }
+        ]
+      }
+    },
+    methods:{
+      showBox:function () {
+        this.show = !this.show;
+      }
+    },
+    mounted(){
+      //头部左侧淡入淡出
+      // $(".g-header-i-toggle a").click(function () {
+      //   $(".g-aside").fadeToggle(500,function () {
+      //       $(this).css({"left":"-200px"});
+      //       $(".g-container").css({"marginLeft":"-200px"})
+      //   })
+      //   // $(".g-aside").fadeToggle(500,function () {
+      //   //   $(this).css({"left":"0"});
+      //   // })
+      // });
+
+      //头部左侧信息隐藏于显示
+      $(".message-menu .menu-list").each(function (i) {
+        $(this).children(".g-head-hidden").css({
+          "display":"none"
+        });
+        $(this).children("a").click(function () {
+          $(this).next(".g-head-hidden").toggle();
+        })
+      })
+
+
+      //侧边栏下拉
+      $(".aside-menu-list").each(function (i) {
+        var n = true;
+        $(this).children("a").click(function () {
+          console.log(i);
+          $(this).next(".hide-menu").slideToggle(500);
+
+          // console.log($(this).next(".hide-menu").children());
+          if (n) {
+            $(this).children(".translate").css({
+              "transform": "rotate(90deg)"
+
+            });
+            n = !n;
+          } else {
+            $(this).children(".translate").css({
+              "transform": "rotate(0deg)"
+            });
+            n = !n;
+          }
+
+        })
+      })
+
+    }
+  });
+</script>
+
+<style>
+  .section{
+    /*margin-left: 200px;*/
+    background: #ffffff!important;
+  }
+  .clearfix{
+    clear: both;
+    height: 0;
+    overflow: hidden;
+  }
+</style>

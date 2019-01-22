@@ -1,0 +1,52 @@
+@charset "utf-8";
+/*CSS Document */
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,select,option,textarea{
+  margin:0;
+  padding:0;
+}
+*{
+  padding:0;
+  margin:0;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+body{
+  font-family:"微软雅黑";
+}
+img{
+  display: block;
+  border:none;
+}
+input{
+  outline:none;
+  border:none;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color:#000;
+}
+.switchtab input{
+  padding:10px 15px;
+  border: 1px solid #ccc;
+  color: #8187ff;
+  background-color: #ddcbdd;
+}
+.switchtab input:nth-child(1){
+  margin-left: 10px;
+}
+.switchtab img{
+  width: 320px;
+  height: 200px;
+}
+.switchtab :active{
+  color:#fff;
+}
+p{
+  margin-left:10px;
+  color:#5e95e1;
+}

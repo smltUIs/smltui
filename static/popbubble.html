@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/popbubble.css"/>
+</head>
+<body>
+  <div class="detail-size">
+  <div class="detail-size-tit">
+    <span> 尺码</span><span class="sizeTable">查看尺码表 </span>
+  </div>
+  <div class="detail-size-body">
+    <ul id="detail-size-body-size">
+      <li class="sizeLis" @click="changeSize(index)" :key="index" v-for="(p,index) in allSize"> {{p.size}}</li>
+      <div id="popBox" class="popBox">
+        <div class="popTable" v-for="(table,index) in allSize" v-show="index==num">
+          <table>
+            <tr>
+              <td>尺码</td>
+              <td>肩宽</td>
+              <td>胸围</td>
+              <td>衣长</td>
+              <td>袖长</td>
+            </tr>
+            <tr>
+              <td>{{table.size}}</td>
+              <td>{{table.shoulder}}</td>
+              <td>{{table.chest}}</td>
+              <td>{{table.clothLength}}</td>
+              <td>{{table.outsideSleeve}}</td>
+            </tr>
+          </table>
+        </div>
+        <p class="popClose">
+          ×
+        </p>
+      </div>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script>
+  // import $ from "jquery"
+  // import SmlPopBubbleCss from "../../lib/theme/SmlPopBubble.css"
+  var app=new Vue({
+    el:".detail-size",
+    data() {
+      return {
+        showchose: false,
+        num: -1,
+        isShow: false,
+        allSize: [
+          {
+            size: "M(160)",
+            shoulder: "40",
+            chest: "101",
+            clothLength: "96",
+            outsideSleeve: "60"
+          },
+          {
+            size: "L(165)",
+            shoulder: "41",
+            chest: "105",
+            clothLength: "97",
+            outsideSleeve: "61"
+          },
+          {
+            size: "XL(170)",
+            shoulder: "42",
+            chest: "109",
+            clothLength: "98",
+            outsideSleeve: "62"
+          },
+          {
+            size: "2XL(175)",
+            shoulder: "43",
+            chest: "113",
+            clothLength: "98",
+            outsideSleeve: "63"
+          }
+        ]
+      }
+    },
+    mounted(){
+      $(".popClose").click(function(){
+        $(".popTable").css({
+          "display":"none",
+        })
+        $(this).css({"display":"none"})
+      });
+    },
+    methods: {
+      changeSize: function (index) {
+        this.num = index
+        console.log(this.num)
+        let popTable = document.getElementsByClassName("popTable")
+        if(index==3){
+        }
+        let popClose = document.getElementsByClassName("popClose")
+        popClose[0].style.display = "block"
+        let domobj = document.getElementById("detail-size-body-size");
+        let lis = domobj.children;
+        if(lis){
+          for(let i=0; i<lis.length; i++){
+            lis[i].index = i;
+            lis[i].onclick = li_click
+          }
+          function li_click(){
+            for(let j=0; j<lis.length; j++){
+              lis[j].style.backgroundColor = "#fff"
+              lis[j].style.borderColor="#d7d7d7"
+              lis[j].style.color="#19100c"
+            }
+            this.style.borderColor = "#dd3d97"
+            this.style.color="#dd3d97"
+          }
+        }
+      }
+    }
+  })
+</script>

@@ -1,0 +1,58 @@
+@charset "utf-8";
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,select,option,textarea{
+  margin:0;
+  padding:0;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: 100;
+}
+*{
+  padding:0;
+  margin:0;
+}
+body{
+  font-family:"微软雅黑";
+}
+img{
+  display: block;
+  border:none;
+}
+input{
+  outline:none;
+  border:none;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+html,body{
+  width:100%;
+}
+html{
+  font-size:26.67vw;
+}
+.dress-nav{
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #b8b9c0;
+}
+.dress-nav div{
+  width: .936rem;
+  height: .86rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  float: left;
+  margin-top: .06rem;
+}
+.dress-nav div img{
+  width: .57rem;
+  height: .57rem;
+  border-radius: 50%;
+}
+.dress-nav div span{
+  font-size: .12rem;
+}

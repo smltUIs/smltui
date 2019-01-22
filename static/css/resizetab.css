@@ -1,0 +1,107 @@
+@charset "utf-8";
+/*CSS Document */
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,select,option,textarea{
+  margin:0;
+  padding:0;
+}
+*{
+  padding:0;
+  margin:0;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+body{
+  font-family:"微软雅黑";
+}
+img{
+  display: block;
+  border:none;
+}
+input{
+  outline:none;
+  border:none;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.BasicTableListBox .BasicTableList:nth-child(2n+1){
+  margin-right:2%;
+}
+.BasicTableList{
+  width: 99.8%;
+  /*height: 215px;*/
+  margin-top:18px;
+  /*border:1px solid #9d4a9c;*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  /*margin-right:2%;*/
+}
+.BasicTableListTitle{
+  width: 100%;
+  height: 37px;
+  line-height: 37px;
+}
+.BasicTableListTitle .iconfont{
+  color: #fff;
+  vertical-align: middle;
+  margin: 0 6px 0 16px;
+}
+.BasicTableListTitleSpan{
+  color:#fff;
+}
+.BasicTableListTable{
+  width: 97%;
+  margin: 2.8% auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.BasicTableListIconfont{
+  float: right;
+}
+.BasicTableListIconfont .iconfont{
+  margin: 0 6px 0px 6px;
+  font-size:14px;
+}
+.BasicTableListTable td{
+  height: 36px;
+  line-height: 36px;
+  border-top:1px solid #dddddd;
+}
+.BasicTableListTable tr:nth-child(1){
+  font-weight: 900;
+}
+.BasicTableListTable tr:nth-child(1) td{
+  border-top:0;
+}
+.BasicTableListTable tr td:nth-child(1){
+  display: inline-block;
+  width: 8.3%;
+  text-align: left;
+  text-indent: 2%;
+}
+.BasicTableListTable tr td:nth-child(2){
+  display: inline-block;
+  width: 27.8%;
+  text-align: left;
+  text-indent: 2%;
+}
+.BasicTableListTable tr td:nth-child(3){
+  display: inline-block;
+  width: 40.4%;
+  text-align: left;
+  text-indent: 2%;
+}
+.BasicTableListTable tr td:nth-child(4){
+  display: inline-block;
+  width: 20.9%;
+  text-align: left;
+  text-indent: 2%;
+}

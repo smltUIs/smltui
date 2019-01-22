@@ -1,0 +1,55 @@
+@charset "utf-8";
+/*CSS Document */
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,select,option,textarea{
+  margin:0;
+  padding:0;
+}
+*{
+  padding:0;
+  margin:0;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+body{
+  font-family:"微软雅黑";
+}
+img{
+  display: block;
+  border:none;
+}
+input{
+  outline:none;
+  border:none;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color:#000;
+}
+html{
+  font-size: 26.67vw;
+}
+
+.dress-banner{
+  width: 100%;
+  /*margin: 50px 0;*/
+}
+.dress-title img{
+  width: 100%;
+  height: .74rem;
+}
+.dress-banbox{
+  display: flex;
+  overflow-x: scroll;
+}
+.dress-banbox::-webkit-scrollbar{
+  display: none;
+}
+.dress-banbox img{
+  /*width: 1.41rem;*/
+  height: 1.6rem;
+}

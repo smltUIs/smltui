@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <!--<div class="hour"></div>-->
+  <div class="min"></div>
+  <div class="sec"></div>
+</body>
+</html>
+<script>
+  // var  endTime = new Date('2019-1-21 00:00:00');
+  this._inter = setInterval(time,1000);
+  function time(){
+    // var startTime = new Date();
+    // var endTime=startTime+1200000;
+    //获取时间戳
+    // var c = endTime.getTime() - startTime.getTime();//毫秒
+    var c=1200000;
+    c = c/1000;
+    var sec = parseInt(c%60);
+    var min = parseInt(c/60)%60;
+    // var hour = parseInt(c/3600)%24;
+    // var day = parseInt((c/3600/24));
+    // document.querySelector(".days").innerHTML=day;
+    // document.querySelector(".hour").innerHTML=convert(hour);
+    document.querySelector(".min").innerHTML=convert(min);
+    document.querySelector(".sec").innerHTML=convert(sec);
+  }
+  time();
+
+  function convert(num) {
+    if(num < 10){
+      return "0" + num;
+    }else{
+      return num;
+    }
+  }
+
+</script>

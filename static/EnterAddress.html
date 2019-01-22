@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+  <link rel="stylesheet" href="css/enteraddress.css">
+</head>
+<body>
+  <div class="detail-pro-address" >
+      <h1>配送至</h1>
+      <p class="enterAdd" @click="choseAdd">{{formatMoney}}</p>
+        <div class="addressBox " v-show="showChose">
+          <section class="title">
+            <i class="iconfont icon-jiantouarrowhead7" @click="close"><</i><h4>输入收货地址</h4><p @click="closeAdd">确定</p>
+          </section>
+          <input class="addressInput" type="text" v-model="address">
+      </div>
+    </div>
+</body>
+</html>
+<script>
+  new Vue({
+    el:".detail-pro-address",
+    data() {
+      return {
+        showChose: false,
+        address:"输入收货地址",
+        id:"输入收货地址"
+      }
+    },
+    methods: {
+      choseAdd: function () {
+        this.showChose = true;
+      },
+      closeAdd: function () {
+        console.log($(".addressInput").val())
+        if($(".addressInput").val() == "" || $(".addressInput").val() ==" "){
+          alert("亲,您还没有输入地址哟")
+          // this.showChose = true;
+        }else {
+          this.showChose = false;
+        }
+      },
+      close:function(){
+        if($(".addressInput").val() == "" || $(".addressInput").val() ==" "){
+          $(".enterAdd").html(this.id);
+        }
+          this.showChose = false;
+
+      }
+    },
+    computed:{
+      //一个计算方法，用来返回处理过的data
+      //计算属性是用来解决data数据的格式化复用
+      formatMoney(){
+        return  this.address
+      }
+    }
+  })
+</script>

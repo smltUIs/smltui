@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <title>form</title>
+  <link rel="stylesheet" type="text/css" href="css/editabletab.css"/>
+</head>
+<body>
+  <div id="table">
+  <div class="add">
+    <input type="text" v-model="addDetail.title" name="title" value="" placeholder="标题" />
+    <input type="text" v-model="addDetail.user" name="user" value="" placeholder="发布人" />
+    <input type="date" v-model="addDetail.dates" name="date" value="" placeholder="发布时间" />
+    <button @click="adddetail">新增</button>
+  </div>
+  <table cellpadding="0" cellspacing="0">
+    <thead>
+    <tr>
+      <th>序号</th>
+      <th>标题</th>
+      <th>发布人</th>
+      <th>发布时间</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="(item,index) in products">
+      <td width="5%">{{index+1}}</td>
+      <td>{{item.title}}</td>
+      <td width="10%">{{item.user}}</td>
+      <td width="15%">{{item.dates}}</td>
+      <td width="10%"><span @click="deletelist(item.id,index)" class="delete">删除</span><span class="edit" @click="edit(item)">编辑</span></td>
+    </tr>
+    </tbody>
+  </table>
+  <div id="mask" v-if="editlist">
+    <div class="mask">
+      <div class="title">
+        编辑
+        <span @click="editlist=false">
+							X
+						</span>
+      </div>
+      <div class="content">
+        <input type="text" v-model="editDetail.title" name="title" value="" placeholder="标题" />
+        <input type="text" v-model="editDetail.user" name="user" value="" placeholder="发布人" />
+        <input type="date" v-model="editDetail.dates" name="date" value="" placeholder="发布时间" />
+        <button @click="update">更新</button>
+        <button @click="editlist=false">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var app = new Vue({
+    el: '#table',
+    data: {
+      addDetail: {},
+      editlist: false,
+      editDetail: {},
+      products: [{
+        title: '在移动设备开发',
+        user: '张一',
+        dates: '2019-01-23',
+        id: "45211546"
+      }, {
+        title: '图形及特效特性',
+        user: '张二',
+        dates: '2018-01-11',
+        id: "61341341"
+      }, {
+        title: '设备兼容特性',
+        user: '张三',
+        dates: '2018-02-09',
+        id: "62451431"
+      }, {
+        title: 'W3C将致力于开发用于实时通信',
+        user: '张四',
+        dates: '2018-01-09',
+        id: "62345213"
+      }, {
+        title: '全新的表单输入对象',
+        user: '张五',
+        dates: '2018-09-09',
+        id: "23322445"
+      }],
+      editid:''
+    },
+    mounted() {
+
+    },
+    methods: {
+      adddetail() {
+        this.products.push({
+          title: this.addDetail.title,
+          user: this.addDetail.user,
+          dates: this.addDetail.dates,
+          id:Math.floor(Math.random()*1000000+1)
+        })
+        this.addDetail.title = ""
+        this.addDetail.user = ""
+        this.addDetail.dates = ""
+        //})
+
+      },
+      deletelist(id, i) {
+        this.products.splice(i, 1);
+      },
+      edit(item) {
+        console.log(item)
+        this.editDetail = {
+          title: item.title,
+          user: item.user,
+          dates: item.dates,
+          id: item.id
+        }
+        this.editlist = true
+        this.editid = item.id
+
+      },
+      update() {
+        let _this= this
+        for(let i = 0; i < _this.products.length; i++) {
+          if(_this.products[i].id ==this.editid) {
+            _this.products[i] = {
+              title: _this.editDetail.title,
+              user: _this.editDetail.user,
+              dates: _this.editDetail.dates,
+              id: this.editid
+            }
+            this.editlist = false
+          }
+        }
+      }
+    }
+  })
+</script>
+</body>
+
+</html>

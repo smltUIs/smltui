@@ -1,0 +1,548 @@
+@charset "utf-8";
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,select,option,textarea{
+  margin:0;
+  padding:0;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: 100;
+}
+*{
+  padding:0;
+  margin:0;
+}
+body {
+  /*font-family: "微软雅黑";*/
+  font-family: 'Arial';
+}
+img{
+  display: block;
+  border:none;
+}
+input{
+  outline:none;
+  border:none;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+html,body{
+  width:100%;
+
+}
+.guide-block .codeDemo{
+  margin-bottom: -10px;
+}
+.codeDemo .pre{
+  font-size: 16px;
+  overflow-x: hidden;
+}
+.codeDemo .pre code{
+  padding: 20px;
+  border-radius: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+
+}
+.codeDemo .codeTitle{
+  font-size: 20px;
+  margin: -20px 0;
+  font-weight: 600;
+  color: #999999;
+  padding-left: 20px;
+}
+.codeDemo .codeTitle.topSpace{
+  padding-top: 10px;
+}
+.guide-title .codeDemo:first-child .codeTitle{
+  padding-top: 10px;
+}
+.guide-center section .guide-title{
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.secondRow{
+  margin-top: -30px;
+}
+.frame{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.frameCenter{
+  margin-top: 70px;
+}
+.frameCenter:after{
+  content: '';
+  height: 0;
+  overflow: hidden;
+  clear: both;
+  visibility: hidden;
+  display: block;
+}
+#mainView{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px 30px 30px 230px;
+  overflow: hidden;
+  height: auto;
+}
+.Frame-header{
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  border-bottom: 1px solid #f1f4f8;
+  position: fixed;
+  background: #fff;
+}
+.Frame-header-left img{
+  width: 110px;
+  height: 60px;
+  float: left;
+  margin: 2px 15px 0 15px;
+}
+.Frame-header-left span{
+  font-size: 15px;
+  color: #333;
+  float: left;
+}
+.Frame-header-right{
+  float: right;
+  margin-right: 50px;
+}
+.Frame-header-right ul li{
+  float: left;
+  margin: 0 20px;
+  cursor:pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.Frame-header-right ul li:hover{
+  color: #0079f3;
+  border-bottom: 3px solid hotpink;
+}
+.Frame-header-right ul li.active{
+  color: #0079f3;
+  border-bottom: 3px solid hotpink;
+}
+.Frame-header-right ul li:last-child{
+  color: #000;
+  border-bottom: 0;
+}
+.Frame-header-right ul li:first-child{
+  /*border-bottom:1px solid #19b5fe;*/
+}
+.Frame-header-right ul li:first-child span{
+  /*color: #0079f3;*/
+}
+.Frame-header-right ul li span{
+  font-size: 17px;
+}
+.Entab{
+  padding: 0 7px;
+  line-height: 24px;
+  border-radius: 3px;
+  text-align: center;
+  color: #455a64;
+  border: 1px solid currentColor;
+}
+.icon-github.frameHeaderIcon{
+  font-size: 26px !important;
+}
+/*FrameCenter*/
+.FrameCenter{
+  width: 100%;
+  overflow-y:auto;
+  display: flex;
+  /*margin-top: 80px;*/
+}
+.FrameCenterList{
+  width: 220px;
+  min-width: 220px;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid #f1f4f8;
+}
+
+.FrameCenterList::-webkit-scrollbar{
+  display: none;
+}
+.FrameCenterList-02{
+  /*width: 180px;*/
+}
+.FrameCenterList-01{
+  /*width: 180px;*/
+  margin-top: -30px;
+}
+/*滚动条样式*/
+.FrameCenterList::-webkit-scrollbar {/*滚动条整体样式*/
+  width: 5px;     /*高宽分别对应横竖滚动条的尺寸*/
+  height: 5px;
+}
+.FrameCenterList::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px #ccc;
+  background: #ccc;
+  /*display: none;*/
+}
+.element{
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
+}
+.forms{
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
+}
+.FrameCenterList ul li{
+  height: 50px;
+  font-size: 14px;
+  text-indent: 40px;
+  line-height: 50px;
+  cursor:pointer;
+  padding-left: 20px;
+}
+.FrameCenterList ul li:hover{
+  background: #f1f4f8;
+}
+.FrameCenterList ul li:hover a{
+  color: #19b5fe;
+}
+.exploit{
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 50px;
+}
+.install{
+  color: #0079f3;
+  font-size: 14px;
+}
+.FrameCenterList div ul li a{
+  color: #000;
+}
+.FrameCenterList-01 ul li:first-child,
+.FrameCenterList-02 ul li:first-child,
+.FrameCenterList-03 ul li:first-child
+{
+  font-size: 16px;
+}
+
+/*FrameCenterContent*/
+.FrameCenterContent{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 645px;
+  overflow-y: auto;
+  padding: 30px 30px 0;
+  margin-left: 200px;
+}
+.FrameCenterContent .FrameCenterContent-01,
+.FrameCenterContent .FrameCenterContent-02,
+.FrameCenterContent .FrameCenterContent-03{
+  padding: 30px;
+}
+.FrameCenterContent::-webkit-scrollbar{
+  display: none;
+}
+.FrameCenterContent-02-03-Box{
+  display: flex;
+}
+.FrameCenterContent-01{
+  float: left;
+
+}
+.FrameCenterContent-03{
+  float: left;
+}
+.FrameCenterContent h1,.VueCenter h1{
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.vue-block{
+  background: #f1f4f8;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/*侧边栏*/
+.g-aside{
+  width: 190px;
+  height: 100%;
+  float: left;
+  overflow-y:auto;
+  position: fixed;
+  left: 0;
+  /*background: #f1e8fd;*/
+  z-index: 0;
+}
+.g-aside::-webkit-scrollbar{
+  display: none;
+}
+.aside-memu,aside-memu1{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 147px;
+  /*margin-top: 30px;*/
+}
+.aside-memu::-webkit-scrollbar,.aside-memu1::-webkit-scrollbar{
+  display: none;
+}
+.aside-menu-list,.aside-menu-list1{
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid #eaecf8;
+  /*background: #f1e8fd;*/
+}
+.aside-menu-list:first-child,
+.aside-menu-list1:first-child{
+  border-top: 0;
+}
+.aside-menu-list:hover a p,
+.aside-menu-list1:hover a p{
+  color: #fc9153;
+  font-weight: 600;
+}
+
+.aside-menu-list>a,
+.aside-menu-list1>a{
+  display: flex;
+  line-height: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.aside-menu-list a p,
+.aside-menu-list1 a p
+{
+  width: 100%;
+  color: #000;
+  font-size: 16px;
+  text-indent: 30px;
+  text-align: left;
+  font-weight: 600;
+}
+.aside-menu-list a .translate,
+.aside-menu-list1 a .translate{
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-left-color: #a0a0a0;
+  position: absolute;
+  top: 26px;
+  right: 13px;
+}
+.aside-menu-list a .menu-list-num{
+  width: 26px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  position: absolute;
+  top: 8px;
+  right: 30px;
+  border-radius: 4px;
+}
+/*下拉菜单1*/
+
+.aside-menu-list .hide-menu{
+  display: none;
+  /*background: #f1e8fd;*/
+  width: 100%;
+  overflow: hidden;
+}
+.aside-menu-list1 .hide-menu1{
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+.aside-menu-list .hide-menu li,
+.aside-menu-list1 .hide-menu1 li{
+  height: 45px;
+  line-height: 45px;
+  display: block;
+  font-size: 12px;
+  color: #a0a0a0;
+  padding-left: 34px;
+}
+/*.aside-menu-list .hide-menu li:hover{*/
+  /*background: #fbfbfb;*/
+/*}*/
+.aside-menu-list .hide-menu li:hover a,
+.aside-menu-list1 .hide-menu1 li:hover a{
+  color: #fc9153;
+}
+.aside-menu-list .hide-menu li:hover li.active,
+.aside-menu-list1 .hide-menu1 li:hover li.active{
+  background: none;
+}
+.aside-menu-list .hide-menu li a,
+.aside-menu-list1 .hide-menu1 li a{
+  font-size: 14px;
+  color: #000;
+}
+
+/*introduce介绍*/
+.introduce{
+  width: 100%;
+}
+.introduce-left{
+  width: 64%;
+  margin: 20px 30px 0 0;
+}
+.introduce-component-logo img{
+  width: 110px;
+  height: 90px;
+  margin-left: 350px;
+}
+.introduce-component-logo h1{
+  font-family: Menlo,Menlo Regular,Consolas,monospace;
+  font-size: 30px;
+  text-align: center;
+  margin:15px 0;
+}
+.introduce-component-logo p{
+  text-align: center;
+  color: #455a64;
+  font-size: 16px;
+}
+.introduce-special,.quick-start{
+  width: 100%;
+  margin-top: 30px;
+  color: #555;
+  padding-left: 20px;
+}
+.introduce-special h1{
+  color: #333;
+  font-size: 22px;
+  font-weight: 600;
+}
+.introduce-special ul{
+  margin:20px 0;
+}
+.introduce-special ul li{
+  width: auto;
+  height: 40px;
+  line-height: 40px;
+  color: #34495e;
+  font-size: 18px;
+  list-style-type: upper-roman;
+  list-style-position: inside;
+  font-family: Menlo,Menlo Regular,Consolas,monospace;
+}
+.introduce-special ul p{
+  text-indent: 10px;
+}
+.introduce-special ul li:hover{
+  color:#8b265a;
+  font-weight: 600;
+}
+.description{
+  width: 93%;
+  height: 60px;
+  line-height: 60px;
+  margin: 20px 0;
+  color: #34495e;
+  font-size: 16px;
+  border-left:2px solid #f7d24c;
+  background: #fefbed;
+  text-indent: 20px;
+}
+.description a{
+  color: #8b265a;
+}
+/*FrameApp 手机展示效果*/
+.FrameApp{
+  position: fixed;
+  right: 2%;
+  top: 90px;
+  width: 317px;
+}
+.FrameAppHeader{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../../../static/image/iphoneX.png") center 0 no-repeat;
+  background-size: 100% 100%;
+}
+.FrameAppHeader h2{
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  top: 33px;
+  left: 113px;
+}
+.FrameAppHeader .webAppContent{
+  width: 100%;
+  height: 460px;
+  margin-top: 72px;
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.fastStart,.supprot{
+  margin: 30px 0;
+}
+
+/*下拉菜单*/
+.FrameAppHeader .webAppContent .container{
+  width: 100%;
+  height: auto;
+}
+.FrameAppHeader .webAppContent .verify-wrap{
+  width: 100% !important;
+}
+.FrameAppHeader .webAppContent .container .fs-wrap{
+  width: 99%;
+  height: 100%;
+}
+.FrameAppHeader .webAppContent .container .fs-wrap .fs-dropdown{
+  height: 94%;
+  border: none;
+}
+.FrameAppHeader .webAppContent .container .fs-wrap .fs-dropdown .fs-options{
+  max-height: 400px;
+}
+/*表格*/
+.Table .T-content label{
+  text-align: left!important;
+}
+.Table .T-content label select{
+  margin-right: 8px!important;
+}
+.Table .T-content label input[name=T-search] {
+  border: 1px solid #eee!important;
+  width: 100% !important;
+  padding: 11px!important;
+}
+
+  /*拖动验证*/
+.webAppContent #verify-wrap span:nth-of-type(2){
+  width: 304px;
+}
+.FrameAppHeader .webAppContent .iframeApp{
+  width: 92%;
+  height: 100%;
+  overflow-y: auto;
+  margin-top: -18px;
+  margin-left: 11px;
+  border: 0;
+}
+.FrameAppHeader .webAppContent .iframeApp::-webkit-scrollbar{
+  display: none;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+  <link rel="stylesheet" href="css/iconfont.css">
+  <link rel="stylesheet" href="css/IndexHeader.css">
+
+</head>
+<body>
+<div class="fixedBox">
+  <div class="index-header">
+    <div class="index-header-bar">
+      <ul class="index-header-bar-menu">
+        <li :key1="index" v-for="(memu1,index) in indexHeader.indexHeaderMenu" @click="addBorder(index)"><router-link :to="memu1.route">{{memu1.title}}</router-link></li>
+      </ul>
+      <div class="index-header-bar-side">
+        <i class="iconfont icon-icon_arrow_bottom"></i>
+      </div>
+      <!--隐藏区域-->
+      <div class="index-header-show">
+        <div class="index-header-show-top">
+          <h4>精选推荐</h4>
+          <img class="upjt" :src="indexHeader.upjt" alt="">
+        </div>
+        <ul class="index-show-list">
+          <li @click="addColor(index2)"  class="one" :key="'one-'+index2" v-if="menu2" v-for="(menu2,index2) in indexHeader.indexShowList">
+            <router-link tag="a" :to="menu2.route"><img :src="menu2.img" alt=""><p>{{menu2.pCon}}</p>
+            </router-link>
+          </li>
+        </ul>
+        <div class="index-header-show-cen">
+          <h4>更多推荐</h4>
+          <ul class="index-show-list2">
+            <li class="two" :key="'two-'+index3" v-for="(memu3,index3) in indexHeader.indexShowList2"><a href="">{{memu3}}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+  new Vue({
+    el:".fixedBox",
+    data(){
+      return{
+        item:"666",
+        loginshow:true,
+        manshow:false,
+        "indexHeader":{
+          "indexHeaderMenu":[
+            {"title":"今日推荐","route":"/"},
+            {"title":"美妆","route":"/VipBeauty"},
+            {"title":"母婴","route":"/VipMom"},
+            {"title":"国际","route":"/"},
+            {"title":"家电","route":"/"},
+            {"title":"家居","route":"/"},
+            {"title":"生活","route":"/"},
+            {"title":"唯品·奢","route":"/"}
+          ],
+          "upjt":"../../lib/image/index-header-upjt.jpg",
+          "indexShowList":[
+            {"img":"image/index-show-img1.jpg","pCon":"今日推荐","route":"/"},
+            {"img":"image/index-show-img2.jpg","pCon":"美妆","route":"/VipBeauty"},
+            {"img":"image/index-show-img3.jpg","pCon":"母婴","route":"/VipMom"},
+            {"img":"image/index-show-img4.jpg","pCon":"国际","route":"/"},
+            {"img":"image/index-show-img5.jpg","pCon":"家电","route":"/"},
+            {"img":"image/index-show-img6.jpg","pCon":"家居","route":"/"},
+            {"img":"image/index-show-img7.jpg","pCon":"生活","route":"/"},
+            {"img":"image/index-show-img8.jpg","pCon":"唯品·奢","route":"/"}
+          ],
+          "indexShowList2":[
+            "女装","男装","鞋包","童装童鞋","面部护肤","手表配饰","内衣","运动户外","护肤彩妆","手机数码",
+            "轻奢","旗舰店","国际","母婴","家居家纺","大家电","家具女装","唯品优选","生活超市","唯品医药"
+          ]
+        }
+      }
+    },
+    methods:{
+      addBorder:function (index) {
+        var ul = document.getElementsByClassName("index-header-bar-menu");
+        // console.log(ul);
+        var lis = ul[0].children;//所有的li
+        // console.log(lis);
+
+        if(lis){
+          for(var i=0;i<lis.length;i++){
+            lis[i].index = i;
+            lis[i].onclick = li_onclick;
+          }
+          function li_onclick() {
+            for(var j=0;j<lis.length;j++){
+              lis[j].firstChild.style.borderBottom = 'none';
+              lis[j].firstChild.style.color = '#5d6471';
+            }
+            this.firstChild.style.borderBottom = '3px solid #d13ca2';
+            this.firstChild.style.color = '#d13ca2';
+            this.firstChild.style.marginBottom = "-.08rem";
+            // console.log(this.index);
+          }
+        }
+      },
+      addColor:function (index) {
+        var list = document.getElementsByClassName("index-show-list");
+        var listLis = list[0].children;//所有的li
+
+        if(listLis){
+          for(var i=0;i<listLis.length;i++){
+            listLis[i].index = i;
+            listLis[i].onclick = li_onclick;
+          }
+          function li_onclick() {
+            for(var j=0;j<listLis.length;j++){
+              listLis[j].firstChild.lastChild.style.color = '#585c64';
+            }
+            this.firstChild.lastChild.style.color = '#d13ca2';
+            // console.log(this.index);
+          }
+        }
+      }
+    },
+    mounted(){
+      //点击箭头隐藏于显示
+      $(".index-header-show").css({"display":"none"});
+      $(".icon-icon_arrow_bottom").on("click",function () {
+        $(".index-header-show").css({"display":"block"});
+
+        if($(".index-header-show").css("display") == "block"){
+          $(".upjt").on("click",function () {
+            $(".index-header-show").css({"display":"none"});
+          });
+        }
+      });
+
+      /**
+       * 获取参数username
+       */
+      // console.log(this.$route.query.username)
+      // if(this.item==this.$route.query.username){
+      //   this.manshow=true
+      //   this.loginshow=false
+      // }
+    }
+
+  })
+</script>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/SmlShopCart.css"/>
+  <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+</head>
+<body>
+<div class="shopcart-boxbox">
+  <div class="shopcart-product-box" :key="pid" v-if="shopcartproduct" v-for="(i,pid) in shopcartproduct">
+    <div class="shopcart-product-img-box">
+      <img :src="i.shopcartproductImg">
+    </div>
+    <div class="shopcart-product-info-box">
+      <h3 class="shopcart-product-describe">{{i.shopcartproductDescribe}}</h3>
+      <h4 class="shopcart-product-brand">{{i.shopcartproductBrand}}</h4>
+      <h4 class="shopcart-product-size">{{i.shopcartproductSize}}</h4>
+      <h4 class="shopcart-product-decrease">{{i.shopcartproductDecrease}}</h4>
+    </div>
+    <div class="shopcart-product-price-box">
+      <h3>￥{{i.shopcartproductCurrPrice}}</h3>
+      <h4>{{i.shopcartproductOriPrice}}</h4>
+    </div>
+    <div class="shopcart-product-num-box">
+      <div class="shopcart-product-nums">
+
+        <!--<i class="iconfont icon-MINUS" v-on:click="subtract(i)"></i>-->
+        <!--<input type="number" class="shopcart-product-num" v-model="i.number" value="0"/>-->
+        <!--<i class="iconfont icon-add" v-on:click="add(i)"></i>-->
+        <!--阻止冒泡-->
+        <a class="iconfont icon-MINUS" @click.prevent.stop="subtract(pid)"></a>
+        <span class="shopcart-product-num">{{i.number}}</span>
+        <a class="iconfont icon-add" @click.prevent.stop="add(pid)"></a>
+        <i class="iconfont icon-close-icon"></i>
+        <!--<i class="iconfont icon-close-icon" @click.prevent.stop="delete(pid)"></i>-->
+        <div class="totalMoneyCount">
+          <span  class="totalMoneyCountSpan">小计 ￥{{i.shopcartproductCurrPrice*i.number}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script>
+  // import $ from "jquery"
+  // import SmlShopCartCss from "../../lib/theme/SmlShopCart.css"
+  // import SmlShopCartFont from '../../../assets/css/iconfont.css';
+
+  var app=new Vue({
+    el: ".shopcart-boxbox",
+    // component: {SmlShopCartCss, SmlShopCartFont},
+    mounted() {
+      $(".shopcart-product-box").each(function () {
+        $(this).children(".shopcart-product-num-box").children(".shopcart-product-nums").children(".icon-close-icon").click(function () {
+          $(this).parent(".shopcart-product-nums").parent(".shopcart-product-num-box").parent(".shopcart-product-box").remove();
+        })
+      })
+    },
+    data() {
+      return {
+        shopcartproduct: [
+          {
+            "shopcartproductImg": "./image/shopcart-product-01.jpg",
+            "shopcartproductDescribe": "唯品自营 | 大翻领双排扣保暖中长款羊毛呢大衣",
+            "shopcartproductBrand": "艾诺丝雅诗ARIOSEYEARS-最后疯抢专场",
+            "shopcartproductSize": "M",
+            "shopcartproductDecrease": "唯品价343元,最后疯抢立省144.0元",
+            "shopcartproductCurrPrice": "1789",
+            "shopcartproductOriPrice": "1999",
+            "number": "1"
+          },
+          {
+            "shopcartproductImg": "./image/shopcart-product-02.jpg",
+            "shopcartproductDescribe": "潮流时尚女装",
+            "shopcartproductBrand": "音儿",
+            "shopcartproductSize": "M",
+            "shopcartproductDecrease": "疯抢立省100.0元",
+            "shopcartproductCurrPrice": "666",
+            "shopcartproductOriPrice": "1000",
+            "number": "1"
+          }
+        ]
+      }
+    },
+    methods: {
+      add(pid) {
+        this.shopcartproduct[pid].number++;
+        // if(this.shopcartproduct[pid].number>=2){
+        //   this.shopcartproduct[pid].number=2;
+        // }
+      },
+      subtract(pid) {
+        if (this.shopcartproduct[pid].number <= 1) {
+          this.shopcartproduct[pid].number = 1
+        } else {
+          this.shopcartproduct[pid].number--;
+        }
+      }
+    }
+  })
+
+</script>
+
+
+

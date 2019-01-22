@@ -1,0 +1,124 @@
+@charset "utf-8";
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,select,option,textarea{
+  margin:0;
+  padding:0;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: 100;
+}
+*{
+  padding:0;
+  margin:0;
+}
+body{
+  font-family:"微软雅黑";
+}
+img{
+  display: block;
+  border:none;
+}
+input{
+  outline:none;
+  border:none;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+html,body{
+  width:100%;
+}
+html{
+  font-size:26.67vw;
+}
+
+.detail-size{
+  margin-top:30px;
+}
+.detail-size-body ul li{
+  float: left;
+  margin-right: .16rem;
+  padding: .03rem .08rem;
+  border: 1px solid #ccc;
+  border-radius: .02rem;
+  margin-top: .05rem;
+}
+.detail-size-body ul li span{
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  color: #19100c;
+  text-align: center;
+  line-height: .3rem;
+  border:1px solid #d7d7d7;
+  border-radius:.03rem ;
+}
+.detail-size-body  .popBox{
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  border-radius: .03rem;
+  font-size: .12rem;
+  line-height: .3rem;
+  /*display: none;*/
+  top:-.9rem;
+}
+.detail-size-body  .popBox .popTable{
+  position: relative;
+  width: 100%;
+  border: 1px solid #999;
+}
+#detail-size-body-size{
+  position: relative;
+}
+.popClose{
+  width: .3rem;
+  height: .3rem;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  transform: translate(50%,-50%);
+  z-index: 666;
+  text-align: center;
+  font-size: .4rem;
+  line-height: .3rem;
+  font-weight: 100;
+  color: #999;
+  display: none;
+}
+.detail-size-body  .popBox table{
+  width: 100%;
+  overflow: hidden;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: center;
+  background: #fff;
+}
+.detail-size-body  .popBox table tr{
+  height:.4rem;
+}
+.detail-size-body  .popBox table tr td{
+  border-top:1px solid #e0e2e4;
+}
+.detail-size .detail-size-body:after{
+  display:block;
+  content:'';
+  clear:both;
+  height:0;
+  overflow:hidden;
+}
+.sizeTable{
+  float:right;
+  color:#5e95e1;
+}
+.detail-size-tit{
+  padding:20px;
+}
+.detail-size-body{
+  padding:0 20px;
+}

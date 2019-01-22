@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/resizetab.css"/>
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css"/>
+</head>
+<body>
+    <div class="BasicTableListBox">
+  <div class="BasicTableList" :key="index" v-for="(i,index) in BasicTableListTitles"  :style='i.BasicTableListBorder'>
+    <div class="BasicTableListTitle" :style="{background:i.tableBgColor}">
+      <span class="iconfont">&#xe703;</span><span class="BasicTableListTitleSpan">{{i.tableTitle}}</span>
+      <div class="BasicTableListIconfont">
+        <!--<a href="#"><span class="iconfont" @click="show(i,index)">&#xe602;</span></a>选项卡-->
+        <span class="iconfont slide">&#xe602;</span>
+        <span class="iconfont del">&#xe661;</span>
+      </div>
+    </div>
+    <!--<table class="BasicTableListTable" cellspacing="0" cellpadding="0" v-show="index==num" 选项卡>-->
+    <div class="tableBox">
+      <table class="BasicTableListTable" cellspacing="0" cellpadding="0">
+        <tr :key="index" v-for="(j,index) in BasicTableListCon">
+          <td>{{j.ord}}</td>
+          <td>{{j.FirstName}}</td>
+          <td>{{j.LastName}}</td>
+          <td>{{j.Username}}</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
+<script>
+  var app=new Vue({
+    el:".BasicTableListBox",
+    mounted(){
+      $(".BasicTableList").each(function () {
+        $(this).children(".BasicTableListTitle").children(".BasicTableListIconfont").children(".slide").click(function () {
+          $(this).parent(".BasicTableListIconfont").parent(".BasicTableListTitle").next(".tableBox").slideToggle(500);
+        });
+        $(this).children(".BasicTableListTitle").children(".BasicTableListIconfont").children(".del").click(function () {
+          $(this).parent(".BasicTableListIconfont").parent(".BasicTableListTitle").parent(".BasicTableList").remove();
+        })
+      })
+    },
+    methods:{
+      // show:function(i,index){  选项卡
+      //   i.isShow=!i.isShow;
+      //   this.num=index;
+      //   console.log(this.num);
+      //   console.log(i);
+      //   console.log(index);
+      //   console.log(i.isShow);
+      // }
+    },
+    data(){
+      return{
+        // isShow:true, 选项卡
+        // num:0,
+
+        BasicTableListTitles:[
+          {"tableTitle":"女装","tableBgColor":"#9d4a9c","BasicTableListBorder":{"border":"1px solid #9d4a9c"}}
+        ],
+        BasicTableListCon:[
+          {"ord":"","FirstName":"品牌","LastName":"商品名","Username":"价格"},
+          {"ord":"1","FirstName":"薇姿曼","LastName":"新款风衣","Username":"679"},
+          {"ord":"2","FirstName":"沫晗依美","LastName":"皮毛一体韩版","Username":"1028"},
+          {"ord":"3","FirstName":"苏的乐园","LastName":"冬季短款","Username":"1029"},
+        ]
+      }
+    }
+  });
+
+</script>
+

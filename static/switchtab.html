@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>tab选项卡</title>
+  <link rel="stylesheet" type="text/css" href="css/switchtab.css">
+</head>
+<body>
+<div class="switchtab">
+  <input type="button" v-for="(v,i) in newInfo"  :value="v.typeName" :class="{active:index===i}" @click="index=i">
+  <div v-for="(item,i) in newInfo" v-show="index===i">
+    <p v-for="info in item.newList">
+      {{info.title}}
+      <img :src="info.titimg" alt="">
+    </p>
+  </div>
+</div>
+</body>
+</html>
+<script src="./js/vue.min.js"></script>
+<script>
+  new Vue({
+    el:'.switchtab',
+    data:{
+      index:0,
+      newInfo:[
+        {
+          typeName:"FIRST",
+          newList:[
+            {
+              title:"TRY",
+              titimg:"./image/t1.jpg"
+            }
+          ]
+        },
+        {
+          typeName:"SECOND",
+          newList:[
+            {
+              title:"FOR",
+              titimg:"./image/t2.jpg"
+            }
+          ]
+        },
+        {
+          typeName:"THIRD",
+          newList:[
+            {
+              title:"PROP",
+              titimg:"./image/t3.jpg"
+            }
+          ]
+        }
+      ]
+    }
+  })
+</script>

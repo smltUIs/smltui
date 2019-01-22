@@ -1,0 +1,109 @@
+@charset "utf-8";
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,select,option,textarea{
+  margin:0;
+  padding:0;
+}
+html{
+  height: 100%;
+}
+html{
+  font-size:26.67vw;
+}
+body{
+  /*font-family:"微软雅黑",Arial;*/
+  width: 100%;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+}
+ul,ol,li{
+  list-style:none;
+}
+a{
+  text-decoration:none;
+  cursor: pointer;
+}
+img{
+  border:none;
+}
+
+
+/*------------MyAddress----------*/
+
+
+.detail-pro-address{
+  width: 100%;
+}
+.detail-pro-address h1{
+  font-weight: 100;
+  font-size: .22rem;
+  text-align: center;
+  padding: .1rem;
+}
+.detail-pro-address p{
+  font-size: .18rem;
+  text-indent: .15rem;
+  color: #666;
+  cursor: pointer;
+}
+.addressBox-bg{
+  /*width: 100%;*/
+  height: 100%;
+  width: 100% ;
+  /*height: 300px;*/
+  position: fixed;
+  left: 0;
+  top: 0;
+  background:rgba(34,34,34,0.6);
+  z-index: 998;
+}
+.detail-pro-address .addressBox{
+  width: 90%;
+  height: 30%;
+  background: #fff;
+  position: absolute;
+  left: 5%;
+  top: 30%;
+  z-index: 999;
+  /*border:1px solid #666666;*/
+  box-shadow:-2px 0 5px #888,0 -2px 5px  #888,0 2px 5px  #888,2px 0 5px  #888;
+}
+.detail-pro-address .addressBox .title{
+  width: 100%;
+  font-size: .18rem;
+  line-height: .24rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding:.15rem .08rem;
+}
+.addressBox .title p{
+  font-size: .18rem;
+  color: #222;
+  cursor: pointer;
+}
+
+.detail-pro-address .addressBox .title i{
+  /*display: block;*/
+  font-size: .24rem;
+  line-height: .24rem;
+  margin-left: 0;
+  font-style: normal;
+  cursor: pointer;
+}
+.detail-pro-address .addressBox .title h4{
+  flex: 1;
+  text-align: center;
+  color: #222;
+  cursor: pointer;
+}
+.detail-pro-address .addressBox input{
+  width: 90%;
+  height: .36rem;
+  border-radius: 2px;
+  border: 1px solid #666;
+  text-align: center;
+  margin-left: 5% ;
+  margin-top: .2rem;
+}
+

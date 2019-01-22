@@ -1,0 +1,180 @@
+
+#qq {
+  width: 273px;
+  height: 190px;
+  background: #fff;
+  margin: 10px auto 20px;
+  border-radius: 5px;
+  background: url("../../../static/images/bg.jpg") no-repeat fixed;
+}
+.messageBox{
+  width: 94%;
+  height: 412px;
+  overflow-y: auto;
+  margin-left: 7px;
+}
+.messageBox::-webkit-scrollbar {/*滚动条整体样式*/
+  width: 5px;     /*高宽分别对应横竖滚动条的尺寸*/
+  height: 5px;
+}
+.messageBox::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px #ccc;
+  background: #ccc;
+}
+#qq p {
+  font-size: 12px;
+  color: #666;
+  font-family: "微软雅黑";
+  line-height: 45px;
+  text-indent: 20px;
+}
+
+#qq .message {
+  width: 271px;
+  height: 70px;
+  margin: 0 auto;
+  overflow: hidden;
+  outline: none;
+  border: 1px solid #ddd;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+  -webkit-background-clip: text;
+  color: #333;
+  background-image: linear-gradient(to right, #778899 0%, #333 100%);
+  /*粗细 风格 颜色*/
+}
+
+#qq .But {
+  width: 270px;
+  height: 35px;
+  margin: 15px auto 0px;
+  position: relative;
+  /*相对，参考对象*/
+}
+
+#qq .But img.bq {
+  float: left;
+  /*左浮动*/
+}
+
+#qq .But span.submit {
+  width: 80px;
+  height: 30px;
+  background: #ff8140;
+  display: block;
+  float: right;
+  /*右浮动*/
+  line-height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  /*手指*/
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  font-family: "微软雅黑";
+}
+
+/*face begin*/
+#qq .But .face {
+  width: 275px;
+  background: #fff;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: 0 0 12px #666;
+  box-shadow: 0 0 12px #666;
+  position: absolute;
+  top: 25px;
+  left: -3px;
+  display: none;
+}
+
+#qq .But .face ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+#qq .But .face ul li {
+  width: 30px;
+  height: 30px;
+  list-style-type: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#qq .message img{
+  display: inline-block!important;
+}
+/*msgCon begin*/
+/*msgCon begin*/
+.msgCon {
+  width: 274px;
+  border-radius: 5px;
+  background: url("../../../static/images/bg.jpg") no-repeat fixed;
+}
+
+.msgCon .msgBox {
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 3px solid #dddddd;
+}
+
+.msgCon .msgBox .headUrl {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px dotted #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.msgCon .msgBox .headUrl .msgTxt img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline!important;
+  vertical-align: middle;
+}
+
+.msgCon .msgBox .headUrl div {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  font-size: 16px;
+  margin-left: 16px;
+  -webkit-background-clip: text;
+  font-weight: 600;
+  background-image: linear-gradient(to top, #b224ef 0%, #7579ff 100%);
+}
+.msgCon .msgBox .headUrl div .time {
+  font-size: 14px;
+  margin-top: 6px;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+}
+
+.msgCon .msgBox .headUrl a {
+  font-size: 14px;
+  padding: 10px;
+  color: salmon;
+  cursor: pointer;
+}
+
+.msgCon .msgBox .msgTxt {
+  font-size: 14px;
+  color: #333;
+  min-height: 40px;
+  line-height: 24px;
+  padding: 10px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #778899 0%, #333 100%);
+}

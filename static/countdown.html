@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countdown</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+  <link rel="stylesheet" href="css/countdown.css">
+</head>
+<body>
+<div class="timer">
+  <p>距2019还剩</p>
+  <div class="timerBox">
+    <div class="time-box days"></div><span>-</span>
+    <div class="time-box hours"></div><span>:</span>
+    <div class="time-box minutes"></div><span>:</span>
+    <div class="time-box seconds"></div>
+  </div>
+</div>
+</body>
+</html>
+<script>
+  new Vue({
+    el:"timer",
+    mounted() {
+      var endTime = new Date('2019-02-04 00:00:00');
+      this._inter = setInterval(function dong() {
+        var startTime = new Date();
+        //获取时间戳
+        var c = endTime.getTime() - startTime.getTime();//毫秒
+        c = c / 1000;
+        var sec = parseInt(c % 60);
+        var min = parseInt(c / 60) % 60;
+        var hour = parseInt(c / 3600) % 24;
+        var day = parseInt((c / 3600 / 24));
+        document.querySelector(".days").innerHTML = day;
+        document.querySelector(".hours").innerHTML = hour;
+        document.querySelector(".minutes").innerHTML = min;
+        document.querySelector(".seconds").innerHTML = sec;
+      }, 1000);
+    }
+  })
+</script>

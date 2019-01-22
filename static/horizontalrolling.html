@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/horizontalrolling.css"/>
+</head>
+<body>
+    <div class="dress-banner">
+      <div class="dress-banbox">
+        <img :src="i" alt="" :key="index" v-for="(i,index) in dressban">
+      </div>
+    </div>
+</body>
+</html>
+<script>
+  // import SmlHorizontalRollingCss from "../../lib/theme/SmlHorizontalRolling.css";
+  // export default {
+  //   name: "SmlHorizontalRolling",
+  //   component:{SmlHorizontalRollingCss},
+  var app=new Vue({
+
+    el:".dress-banner",
+    data(){
+      return {
+        dressban: [
+          "./image/dress-banner-01.jpg",
+          "./image/dress-banner-02.jpg",
+          "./image/dress-banner-03.jpg",
+          "./image/dress-banner-04.jpg",
+          "./image/dress-banner-05.jpg",
+          "./image/dress-banner-06.jpg",
+          "./image/dress-banner-07.jpg",
+          "./image/dress-banner-08.jpg",
+          "./image/dress-banner-9.jpg"
+        ]
+      }
+    }
+  })
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!--<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>-->
+    <script src="js/vue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/menulist.css"/>
+</head>
+<body>
+  <div class="dress-nav">
+    <div class="dress-navbox" :key="index" v-for="(i,index) in dressnav">
+      <img :src="i.dressnavImg" alt="">
+      <span>{{i.dressnavName}}</span>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  // import SmlMenuListCss from '../../lib/theme/SmlMenuList.css';
+  // export default {
+    // name: "SmlMenuList",
+    // components:{SmlMenuListCss},
+    var app=new Vue({
+      el:".dress-nav",
+      data(){
+        return {
+          dressnav: [
+            {
+              dressnavImg: './image/dress-nav-01.jpg',
+              dressnavName: '大衣'
+            },
+            {
+              dressnavImg: './image/dress-nav-02.jpg',
+              dressnavName: '连衣裙'
+            },
+            {
+              dressnavImg: './image/dress-nav-03.jpg',
+              dressnavName: '外套'
+            },
+            {
+              dressnavImg: './image/dress-nav-04.jpg',
+              dressnavName: '针织衫'
+            },
+            {
+              dressnavImg: './image/dress-nav-05.jpg',
+              dressnavName: '羽绒服'
+            },
+            {
+              dressnavImg: './image/dress-nav-06.jpg',
+              dressnavName: '毛衣'
+            },
+            {
+              dressnavImg: './image/dress-nav-07.jpg',
+              dressnavName: '卫衣'
+            },
+            {
+              dressnavImg: './image/dress-nav-08.jpg',
+              dressnavName: '皮草皮革'
+            },
+            {
+              dressnavImg: './image/dress-nav-09.jpg',
+              dressnavName: '棉衣'
+            },
+            {
+              dressnavImg: './image/dress-nav-10.jpg',
+              dressnavName: '长裤'
+            },
+            {
+              dressnavImg: './image/dress-nav-11.jpg',
+              dressnavName: '套装'
+            },
+            {
+              dressnavImg: './image/dress-nav-12.jpg',
+              dressnavName: '半身裙'
+            }
+          ]
+        }
+      }
+    })
+</script>
+
+
+
+
+

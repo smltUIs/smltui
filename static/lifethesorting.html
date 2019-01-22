@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lifethesorting</title>
+  <style>
+    html{
+      font-size: 26.67vw;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+  <link rel="stylesheet" href="css/lifethesorting.css">
+</head>
+<body>
+<div class="list-big-box">
+  <div class="list-screen">
+    <ul>
+      <li><span>价格</span><span class="list-ico"><i class="iconfont1" @click="orderFn('ListProPrice', false)">∧</i><i class="iconfont2" @click="orderFn('ListProPrice', true)">∨</i></span>
+      </li>
+      <li><span>折扣</span><span class="list-ico"><i class="iconfont1"  @click="orderFn('ListDiscount', false)">∧</i><i class="iconfont2" @click="orderFn('ListDiscount', true)">∨</i></span>
+      </li>
+      <li><span>品牌</span><i class="iconfont icon-mark-o"></i></li>
+      <li><span>筛选</span><i class="iconfont icon-screen"></i></li>
+    </ul>
+  </div>
+  <section class="list-content" id="bar">
+    <div class="list-body">
+      <div class="list-product" :key="index" v-for="(p,index) in lists">
+        <!--<img  :src="p.ListProImg" alt="">-->
+        <div class="img">{{p.ListProImg}}</div>
+        <p class="list-pro-price"><span class="list-pro-rob">{{p.ListProRob}}</span>￥{{p.ListProPrice}}<small><span>
+                    ￥  {{p.ListProSmall}}</span> {{p.ListDiscount}}折</small>
+        </p>
+        <p class="list-pro-name">
+          {{p.ListBrand}} |
+          {{p.ListProName}}
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+<script>
+ var lefeSorting = new Vue({
+   el:".list-big-box",
+    data(){
+      return{
+        "letter": "",
+        "original":false ,
+        "products":[
+          {
+          "ListProImg":"PIC1",
+          "ListProPrice":"916",
+          "ListProRob":"",
+          "ListProSmall":"4580",
+          "ListDiscount":"2",
+          "ListBrand":"音儿",
+          "ListProName":"YINER音儿精致绣花纯羊毛双面呢大衣"
+        },
+          {
+            "ListProImg":"PIC2",
+            "ListProPrice":"597",
+            "ListProRob":"",
+            "ListProSmall":"3980",
+            "ListDiscount":"1.5",
+            "ListBrand":"音儿",
+            "ListProName":"斯文淑女长款羊毛大衣"
+          },
+          {
+            "ListProImg":"PIC3",
+            "ListProPrice":"820",
+            "ListProRob":"",
+            "ListProSmall":"3280",
+            "ListDiscount":"2.5",
+            "ListBrand":"音儿",
+            "ListProName":"YINER音儿时尚西装领纯羊毛双面呢大衣"
+          },
+          {
+            "ListProImg":"PIC4",
+            "ListProPrice":"2950",
+            "ListProRob":"",
+            "ListProSmall":"11800",
+            "ListDiscount":"2.5",
+            "ListBrand":"SEIFINI",
+            "ListProName":"狐狸毛领羽绒内胆阿尔巴卡大衣"
+          },
+          {
+            "ListProImg":"PIC5",
+            "ListProPrice":"528",
+            "ListProRob":"快抢价",
+            "ListProSmall":"2399",
+            "ListDiscount":"0",
+            "ListBrand":"飘蕾",
+            "ListProName":"Peoleo飘蕾2018冬装新款专柜同款大毛领外套羊毛"
+          },
+          {
+            "ListProImg":"PIC6",
+            "ListProPrice":"418",
+            "ListProRob":"快抢价",
+            "ListProSmall":"2980",
+            "ListDiscount":"0",
+            "ListBrand":"舒朗",
+            "ListProName":"时尚舒适双排扣翻领羊毛大衣"
+          },
+          {
+            "ListProImg":"PIC7",
+            "ListProPrice":"1512",
+            "ListProRob":"",
+            "ListProSmall":"5680",
+            "ListDiscount":"2.7",
+            "ListBrand":"音儿",
+            "ListProName":"中长款水波纹纯羊毛双面呢大衣"
+          },
+          {
+            "ListProImg":"PIC8",
+            "ListProPrice":"559",
+            "ListProRob":"",
+            "ListProSmall":"2199",
+            "ListDiscount":"2.5",
+            "ListBrand":"丽丽",
+            "ListProName":"【收腰系带 双面呢】收腰系带中长款袖口拼接大衣"
+          },
+          {
+            "ListProImg":"PIC9",
+            "ListProPrice":"679",
+            "ListProRob":"快抢价",
+            "ListProSmall":"2890",
+            "ListDiscount":"0",
+            "ListBrand":"薇姿曼",
+            "ListProName":"2018冬季新款风衣款双面呢小方领时尚肩扣系腰带"
+          },
+          {
+            "ListProImg":"PIC10",
+            "ListProPrice":"359",
+            "ListProRob":"",
+            "ListProSmall":"1028",
+            "ListDiscount":"3.5",
+            "ListBrand":"沫晗依美",
+            "ListProName":"【2018冬装新款】女款复合皮毛一体韩版时尚通"
+          }
+        ]
+      }
+    },
+    methods: {
+      orderFn(letter, original) {
+        // console.log(this.lists)
+
+        console.log( this.priceList)
+        this.letter = letter; //排序字段 price or sales
+        // console.log(this.list.letter)
+        this.original = original; //排序方式 up or down
+      }
+    },
+    computed: {
+      lists: function () {
+        var _this = this;
+        if (this.letter != '') {
+          this.products.sort(function (a, b) {
+            if (_this.original) {
+              return b[_this.letter] - a[_this.letter];
+            } else {
+              return a[_this.letter] - b[_this.letter];
+            }
+          });
+        }
+        return this.products;
+      }
+    }
+  }
+ )
+</script>

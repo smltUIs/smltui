@@ -1,0 +1,47 @@
+@charset "utf-8";
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,select,option,textarea{
+  margin:0;
+  padding:0;
+}
+html{
+  height: 100%;
+}
+html{
+  font-size:26.67vw;
+}
+body{
+  /*font-family:"微软雅黑",Arial;*/
+  width: 94%;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+}
+ul,ol,li{
+  list-style:none;
+}
+a{
+  text-decoration:none;
+  cursor: pointer;
+}
+img{
+  border:none;
+}
+
+.form-group{
+  width: 100%;
+  text-align: center;
+  font-size: .2rem;
+  line-height: .5rem;
+  color: #666;
+  overflow: hidden;
+}
+.form-group .col-md-4{
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  text-indent: .2rem;
+}
+.form-group .grade-box img{
+  width: .6rem;
+}
+
+
