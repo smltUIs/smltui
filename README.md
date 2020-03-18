@@ -1,26 +1,30 @@
 # smltui
 
 
-![]()
-
-
- Simple utility edition `Mobile` UI `Components` built on `Vue`
-
-## Install
-
-``` bash
-# install dependencies
+## Project setup
+```
 npm install
-
-# npm
-npm inatall smltui
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# import all components
-import Vue from 'vue'
-import mltui from 'smltui'
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
